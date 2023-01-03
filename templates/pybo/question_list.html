@@ -1,0 +1,13 @@
+{% comment %} '%}'로 둘러싸인 문장은 템플릿 태크 {% endcomment %}
+
+{% comment %} question_list가 있다면  {% endcomment %}
+{% if question_list %}
+    <ul>
+    {% comment %} question_list를 순회하며 순차적으로 하나씩 question에 대입 {% endcomment %}
+    {% for question in question_list %}
+        <li><a href="/pybo/{{ question.id }}/">{{ question.subject }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>질문이 없습니다.</p>
+{% endif %}
