@@ -5,7 +5,7 @@
     <ul>
     {% comment %} question_list를 순회하며 순차적으로 하나씩 question에 대입 {% endcomment %}
     {% for question in question_list %}
-        <li><a href="/pybo/{{ question.id }}/">{{ question.subject }}</a></li>
+        <li><a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
